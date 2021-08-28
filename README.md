@@ -1,46 +1,160 @@
-# Getting Started with Create React App
+<h1 align="center">
+<img src=".github/logo.svg" width="200px">
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <img src="https://img.shields.io/badge/-NodeJS-green" />
+  <img src="https://img.shields.io/badge/-ReactJS-blue" />
+  <img src="https://img.shields.io/badge/-React Native-9cf" /> <br>
+</p>
+<img alt="Mockup" src=".github/prototipo.png">
 
-## Available Scripts
+## Index
+- [Projeto](#-projeto)
+- [Layout](#-layout)
+- [Tecnologias](#rocket-tecnologias)
+- [Como executar o projeto](#-como-executar-o-projeto)
+- [Como contribuir](#-como-contribuir)
+- [Autor](#-autor)
 
-In the project directory, you can run:
 
-### `yarn start`
+## 💻 Projeto
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**GoBarber** é um que projeto foi criado na 12ª edição do **GoStack** da **Rocketseat**, cujas principais características são fazer agendamentos para barbearias, que
+facilita a organização dos cabelereiros, para atenderem os seus clientes.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🎨 Layout
+Você pode visualizar o layout do projeto no formato através deste [link](https://www.figma.com/file/BXCihtXXh9p37lGsENV614/GoBarber). Lembrando que você precisará ter uma conta [Figma](https://www.figma.com/).
 
-### `yarn test`
+## :rocket: Tecnologias
+O projeto foi desenvolvido utilizando as seguintes tecnologias:
+- [TypeScript](https://www.typescriptlang.org)
+- [PostgreSQL](https://www.postgresql.org)
+- [TypeORM](https://typeorm.io)
+- [Docker](https://www.docker.com)
+- [Redis](https://redis.io)
+- [MongoDB](https://www.mongodb.com)
+- [Jest](https://jestjs.io)
+- [NodeJS](https://nodejs.org/en/)
+- [ReactJS](https://reactjs.org)
+- [React Native](https://facebook.github.io/react-native/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🚀 Como executar o projeto
 
-### `yarn build`
+Este projeto está dividido em três partes:
+1. Backend
+2. Frontend
+3. Mobile
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Antes de começar, você precisará ter as seguintes ferramentas instaladas em sua máquina:
+[Git](https://git-scm.com), [Docker](https://www.docker.com), [DBeaver](https://dbeaver.io), [Node.js](https://nodejs.org/en/).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Além disso, é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Instalação e configuração do Docker
 
-### `yarn eject`
+1. Instale o [docker](https://www.docker.com/get-started) em sua máquina.
+2. Crie um contêiner postgres no terminal docker: ``docker run --name postgres -e POSTGRES_PASSWORD = docker -p 5432: 5432 -d postgres``.
+3. Inicie o container criado: ``docker start postgres``.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 🎲 Executando o Back End (servidor)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# Clone este repositório
+$ git clone https://github.com/lucasbarque/frontend_go_barber.git
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# Acesse a pasta do projeto no terminal / cmd
+$ cd GoStack-GoBarber
 
-## Learn More
+# Vá para a pasta do servidor
+$ cd server
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Instalar dependências
+$ yarn
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Abra o DBeaver e crie uma nova conexão, inserindo os dados:
+# HOST: localhost / 192.168.99.100
+# DATABASE: Postgres
+# USERNAME: Postgres
+# PASSWORD: docker
+
+# Instale todas as dependências do banco de dados
+$ yarn typeorm:migration: run
+
+# Execute o aplicativo em modo de desenvolvimento
+$ yarn dev:server
+
+# O servidor irá iniciar na porta: 3333 - vá para http://localhost:3333
+
+```
+
+#### 🧭 Executando o aplicativo da web (Frontend)
+
+```bash
+
+# Clone este repositório
+$ git clone https://github.com/lucasbarque/frontend_go_barber.git
+
+# Acesse a pasta do projeto no terminal / cmd
+$ cd GoStack-GoBarber
+
+# Vá para a pasta do aplicativo Front End
+$ cd web
+
+# Instale as dependências
+$ yarn
+
+# Execute o aplicativo em modo de desenvolvimento
+$ yarn start
+
+# O aplicativo será aberto na porta: 3000 - vá para http://localhost:3000
+
+```
+
+#### 📱 Executando o aplicativo (Mobile)
+
+```bash
+
+# Clone este repositório
+$ git clone https://github.com/lucasbarque/frontend_go_barber.git
+
+# Acesse a pasta do projeto no terminal / cmd
+$ cd GoStack-GoBarber
+
+# Vá para a pasta do aplicativo Front End
+$ cd mobile
+
+# Instale as dependências
+$ yarn
+
+# Execute o aplicativo em modo de desenvolvimento
+$ yarn start
+$ yarn android / yarn ios
+
+# Seu dispositivo deve ser configurado no modo de desenvolvedor e conectado pelo cabo USB em sua máquina,
+# para que seja reconhecido, uma vez feito isso, basta aguardar o início do aplicativo.
+
+```
+
+## 🤔 Como contribuir
+
+- Fork o repositório;
+- Crie um branch com seu recurso: `git checkout -b my-feature`;
+- Faça commit de suas mudanças: `git commit -m 'feat: My new feature'`;
+- Envie para o seu branch: `git push origin my-feature`.
+
+Após a mesclagem de sua solicitação pull, você pode excluir seu branch.
+
+## :memo: Licença
+
+Este projeto está sob a licença do MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
+
+---
+
+## 🦸 Autor
+<a href="https://www.linkedin.com/in/lucas-barque/">
+  <sub><b>Lucas Barque 🚀</b></sub></a>
+
+Feito com :purple_heart: por Lucas Barque 👋🏽
+
